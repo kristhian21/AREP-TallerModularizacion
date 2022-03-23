@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Words</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Words Service!</h1>
+            <p>Esta página web permite insertar una palabra dentro de una base de datos NoSQL de MongoDB
+            </p>
+            <label id="label" for="fword">Ingrese una palabra:</label><br>
+            <input id="inputWord" type="text" id="fword" name="fword" value=""><br><br>
+            <button id="submitButton" onclick="app.send()">Submit</button>
+            <h2>Resultado</h2>
+            <div id="cuadroRespuesta">
+                <p>Respuesta en formato JSON</p>
+            </div>
+        </div>
+    </main>
+    <!--Load de js file-->
+    <script src="js/app.js"></script>
+</body>
+</html>
