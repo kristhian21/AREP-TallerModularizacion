@@ -49,3 +49,26 @@ private String selectHost() {
         return returnHost;
 }
 ```
+
+### LogService
+
+La clase LogService se encarga de hacer la conexión con la base de datos de MongoDB, adicionalmente también usa el servicio
+MongoDBService para hacer operaciones sobre la base de datos
+
+```
+    public static void main(String[] args) {
+        // Set up the port
+        port(getPort());
+        System.out.println("Escuchando peticiones...");
+        // Connect with MongoDB
+        MongoDBService service = new MongoDBService();
+        // POST word
+        post("/add", (request, response) -> {
+            String newWord = request.queryParams("word");
+            System.out.println("New word: " + newWord);
+            String result = service.insertWord(newWord);
+            System.out.println(result);
+            return result;
+        });
+    }
+```
